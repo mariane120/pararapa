@@ -1,0 +1,84 @@
+@media (max-width: 768px) {
+  /*Estilos texto*/
+  .titulo1 {
+    font-size: 32px;
+    line-height: 35px;
+  }
+  .titulo2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .presentacion {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .producto p {
+    display: none;
+  }
+
+  .producto {
+    padding-bottom: 30px;
+  }
+
+  .nadal,
+  .gridQuienesSomos {
+    grid-template-columns: 1fr;
+    padding-bottom: 10px;
+  }
+
+  .donde {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+
+  .manifiesto {
+    flex-direction: column;
+    gap: 0px;
+    padding-bottom: 30px;
+  }
+
+  .contacto {
+    padding-top: 10px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contacto div,
+  .manifiesto div {
+    width: 100%;
+  }
+  .contacto p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .menu {
+    padding-bottom: 40px;
+  }
+  .contacto {
+    padding-top: 10px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contacto div,
+  .manifiesto div {
+    width: 100%;
+  }
+  .contacto p {
+    font-size: 14px;
+  }
+}

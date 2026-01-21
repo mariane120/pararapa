@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", serif;
+}
+
+/*Estilos texto*/
+.titulo1,
+h1 {
+  font-size: 40px;
+  line-height: 45px;
+}
+.titulo2,
+h2 {
+  font-size: 30px;
+  line-height: 35px;
+}
+.titulo3,
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+/*Estilos barra horizontal inicio*/
+.barra {
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  font-size: 40px;
+  white-space: nowrap;
+  position: fixed;
+  z-index: 999; /*Aseguramos que se sitúe enriba de calquera elemento*/
+}
+
+.barra a {
+  color: white; /* mantiene el texto blanco */
+  text-decoration: none; /* quita el subrayado */
+}
+
+.barra a:visited {
+  color: white; /* mantiene blanco incluso tras visitar */
+}
+
+.barra a:hover,
+.barra a:active {
+  color: white; /* opcional: mantiene el blanco al pasar el ratón o pulsar */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-animation 120s linear infinite;
+}
+
+@keyframes marquee-animation {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/*Estilos para cabeceira-presentación*/
+header {
+  background-color: #f4f4f4;
+}
+
+.presentacion {
+  padding-top: 140px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.presentacion .titulo1 {
+  font-size: clamp(
+    1.5rem,
+    2.5vw,
+    2.5rem
+  ); /* se adapta entre 24px y 40px aprox */
+  line-height: 1.3;
+}
+
+.presentacion img {
+  max-width: 100%; /* nunca más grande que su contenedor */
+  height: auto; /* mantiene proporción */
+  flex-shrink: 0; /* evita que se deforme */
+}
+
+/*Estilos para menu*/
+.menu {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#botonQue,
+#botonDonde,
+#botonComo,
+#botonFollow {
+  font-size: 16px;
+  list-style-type: none;
+}
+
+.menu a {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
+
+.menu a:hover,
+.menu a:active {
+  border-bottom: solid 1px;
+  color: black;
+}
+
+/*Estilos para a sección de QUE FACEMOS*/
+.hacemos {
+  width: 90%; /* Ocupa el 90% de la pantalla */
+  max-width: 1920px; /* No se estira demasiado en pantallas grandes */
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.producto {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+
+.producto .titulo2,
+.producto p {
+  width: 90%; /* Ocupa el 90% de la pantalla */
+  max-width: 1920px; /* No se estira demasiado en pantallas grandes */
+  margin: 0 auto;
+}
+
+.nadal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 90%; /* Ocupa el 90% de la pantalla */
+  max-width: 1920px; /* No se estira demasiado en pantallas grandes */
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.postal {
+  position: relative;
+  width: 100%;
+  padding-top: 105%;
+}
+
+.postal img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción */
+  aspect-ratio: 1 / 1; /* Mantiene la relación de aspecto */
+  object-fit: cover; /* Cubre sin deformar */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: opacity 0.4s ease;
+}
+
+/* A contra empeza oculta */
+.postal img:nth-child(2) {
+  opacity: 0;
+}
+
+/*Ao facer hover amosamos a segunda imaxe*/
+.postal:hover img:nth-child(2) {
+  opacity: 1;
+}
+
+/*E ocultamos a primeira*/
+.postal:hover img:nth-child(1) {
+  opacity: 0;
+}
+
+/*Estilos tendas*/
+.donde {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.donde h5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.donde a {
+  outline: none;
+  text-decoration: none;
+  color: #9faee5;
+}
+
+.donde a:hover {
+  background-color: #9faee5;
+  color: white;
+}
+
+.donde a:active {
+  background-color: #9faee5;
+  padding: 0 10px 0 30px;
+  color: white;
+}
+
+#ciudades {
+  padding-top: 25px;
+}
+
+.bordeCiudades {
+  border-top: 1px solid;
+  padding: 20px;
+}
+
+.cidade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mas {
+  font-size: xx-large;
+}
+
+.listaTendas {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+/*Estilos Quiénes somos*/
+
+/*Somos raras*/
+.quien {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+/*Nata y Marián*/
+.mamas {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+
+.mamas > .titulo2,
+.mamas > p {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.gridQuienesSomos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.mamas img {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción */
+  aspect-ratio: 1 / 1; /* Mantiene la relación de aspecto */
+  object-fit: cover; /* Cubre sin deformar */
+  border-radius: 25px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.somosManifiesto {
+  padding-top: 50px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/*manifiesto*/
+.manifiesto {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.manifiesto div {
+  width: 33%;
+}
+
+/*Estilos sección newsletter*/
+.newsletter {
+  border-top: solid black 2px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*Estilos pé de páxina*/
+footer {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background-color: black;
+  color: white;
+}
+
+.contacto {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+}
+.contacto div {
+  width: 33%;
+}
+
+footer a {
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  background-color: black;
+  padding: 0;
+  color: white;
+}
+
+footer a:active {
+  background-color: black;
+  padding: 0;
+  color: white;
+}
+
+.sinatura {
+  border-top: solid 1px white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.sinatura a {
+  text-decoration: none;
+  color: white;
+}
+
+/*Estilos main cookies + política privacidad*/
+main.cookies {
+  padding-top: 140px;
+  padding-bottom: 50px;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+main.cookies a {
+  outline: none;
+  text-decoration: none;
+  color: #9faee5;
+}
+
+main.cookies a:hover {
+  background-color: #9faee5;
+  color: white;
+}
+
+main.cookies a:active {
+  background-color: #9faee5;
+  padding: 0 10px 0 30px;
+  color: white;
+}
